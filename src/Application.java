@@ -49,20 +49,20 @@ public class Application {
          **/
         Scanner in = new Scanner(System.in);
         System.out.println("Bitte geben sie die erste Zahl an ");
-        int number1 = in.nextInt();
+        double number1 = in.nextInt();
         System.out.println("Bitte geben sie die zweite Zahl an ");
-        int number2 = in.nextInt();
+        double number2 = in.nextInt();
 
-        int result = calculateSum(number1, number2);
+        double result = calculateSum(number1, number2);
         double Quotient = calculatequotient(number1, number2);
 
         System.out.println("Quotient of " + number1 + " and " + number2 + " is equal to " + Quotient);
     }
-    public static int  calculateSum(int number1, int number2) {
+    public static double  calculateSum(double number1, double number2) {
         return number1 + number2;
     }
 
-    public static double calculatequotient(int number1, int number2){return number1 / number2; }
+    public static double calculatequotient(double number1, double number2){return number1 / number2; }
 }
 
 
