@@ -3,6 +3,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+/*
+* Eine neue Methode, welche Zwei Zahlen mit einander dividiert (geteilt)
+*  Eine neue Methode, welche zwei Zahlen mit einander differenziert (minus)
+*  Eine neue Methode, welche zwei Zahlen mit einander multipliziert (mal)
+* Den User nicht nur nach zwei zahlen fragen, sondern davor fragen was er rechnen will
+ */
+
 public class Application {
 
     /**
@@ -51,11 +58,9 @@ public class Application {
         System.out.println("Result of " + number1 + " and " + number2 + " is equal to" + result);
     }
     public static int  calculateSum(int number1, int number2) {
-        // Verify just positive numbers
-        if (number1 <0 || number2 < 0 ) {
-            return -1;
-        }
         return number1 + number2;
     }
 
 }
+
+
