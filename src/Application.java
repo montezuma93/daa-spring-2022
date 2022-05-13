@@ -54,13 +54,15 @@ public class Application {
         int number2 = in.nextInt();
 
         int result = calculateSum(number1, number2);
+        double Quotient = calculatequotient(number1, number2);
 
-        System.out.println("Result of " + number1 + " and " + number2 + " is equal to" + result);
+        System.out.println("Quotient of " + number1 + " and " + number2 + " is equal to " + Quotient);
     }
     public static int  calculateSum(int number1, int number2) {
         return number1 + number2;
     }
 
+    public static double calculatequotient(int number1, int number2){return number1 / number2; }
 }
 
 
