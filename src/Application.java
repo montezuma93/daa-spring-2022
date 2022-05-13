@@ -62,7 +62,10 @@ public class Application {
         return number1 + number2;
     }
 
-    public static double calculatequotient(double number1, double number2){return number1 / number2; }
+    public static double calculatequotient(double number1, double number2) {
+        if (number2 == 0){System.out.println("kann micht durch 0 teilen");}
+        return number1 / number2;
+    }
 }
 
 
