@@ -19,4 +19,11 @@ class ApplicationTest {
         Assertions.assertEquals(0 , Application.calculateQuotient(0,4) );
         Assertions.assertThrows(RuntimeException.class, ()->Application.calculateQuotient(5,0)  );
     }
+    @Test
+    void testSubtract() {
+        Assertions.assertEquals(2, Application.subtractTwoNumbers(5,3));
+        Assertions.assertEquals(3, Application.subtractTwoNumbers(6,3));
+        Assertions.assertEquals(4, Application.subtractTwoNumbers(7,3));
+        Assertions.assertEquals(5, Application.subtractTwoNumbers(8,3));
+    }
 }

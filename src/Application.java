@@ -11,8 +11,8 @@ import java.util.Scanner;
 public class Application {
 
     /**
-     * @see "https://stackoverflow.com/questions/4644415/java-how-to-get-input-from-system-console"
      * @param args
+     * @see "https://stackoverflow.com/questions/4644415/java-how-to-get-input-from-system-console"
      * @deprecated warum, seit wann
      */
     public static void main(String args[]) throws IOException  //static method
@@ -53,11 +53,20 @@ public class Application {
 
         double result = calculateSum(number1, number2);
         double quotient = calculateQuotient(number1, number2);
+        int result = calculateSum(number1, number2);
+        int subtract = subtractTwoNumbers(number1, number2);
 
         System.out.println("Quotient of " + number1 + " and " + number2 + " is equal to " + quotient);
+        System.out.println("Result of " + number1 + " and " + number2 + " is equal to" + result);
+        System.out.println("Subtraction of " + number1 + " and " + number2 + " is equal to " + subtract);
     }
+
+    public static int calculateSum(int number1, int number2) {
     public static double  calculateSum(double number1, double number2) {
         return number1 + number2;
+    }
+    public static int subtractTwoNumbers(int number1, int number2) {
+        return number1 - number2;
     }
 
     public static double calculateQuotient(double number1, double number2) {
