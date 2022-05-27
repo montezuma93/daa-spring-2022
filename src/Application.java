@@ -41,6 +41,13 @@ public class Application {
          * @See https://stackoverflow.com/questions/4644415/java-how-to-get-input-from-system-console
          **/
         Scanner in = new Scanner(System.in);
+
+        System.out.println("Bitte geben sie die Zahl an ");
+        int zahl = in.nextInt();
+        boolean ausgabe = istQuadratZahl(zahl);
+        System.out.println(zahl + " ist Quadratzahl: " + ausgabe);
+
+       /*
         System.out.println("Bitte geben sie die erste Zahl an ");
         double number1 = in.nextInt();
         System.out.println("Bitte geben sie die zweite Zahl an ");
@@ -66,7 +73,7 @@ public class Application {
         System.out.println("Quotient of " + number1 + " and " + number2 + " is equal to " + quotient);
         System.out.println("Sum of " + number1 + " and " + number2 + " is equal to" + summe);
         System.out.println("Subtraction of " + number1 + " and " + number2 + " is equal to " + subtract);
-
+*/
     }
 
     public static double calculateSum(double number1, double number2) {
@@ -86,6 +93,14 @@ public class Application {
 
     public static double calculateProduct(double number1, double number2) {
         return number1 * number2;
+    }
+
+    public static boolean istQuadratZahl(int zahl){
+        if (zahl < 1){
+            throw new RuntimeException("100% keine Quadratzahl");
+        }
+        double result = Math.sqrt(zahl);
+        return result == (int) result;
     }
 
 }
