@@ -8,7 +8,7 @@ class ApplicationTest {
         Assertions.assertEquals(3, Application.calculateSum(1,2));
         Assertions.assertEquals(4, Application.calculateSum(2,2));
         Assertions.assertEquals(2, Application.calculateSum(0,2));
-        Assertions.assertEquals(-1, Application.calculateSum(-1,2));
+        Assertions.assertEquals(1, Application.calculateSum(-1,2));
     }@Test
     void testcalculatequotient(){
         Assertions.assertEquals(3, Application.calculateQuotient(6,2) );
@@ -18,5 +18,12 @@ class ApplicationTest {
         Assertions.assertEquals(7, Application.calculateQuotient(14,2) );
         Assertions.assertEquals(0 , Application.calculateQuotient(0,4) );
         Assertions.assertThrows(RuntimeException.class, ()->Application.calculateQuotient(5,0)  );
+    }
+    @Test
+    void testSubtract() {
+        Assertions.assertEquals(2, Application.subtractTwoNumbers(5,3));
+        Assertions.assertEquals(3, Application.subtractTwoNumbers(6,3));
+        Assertions.assertEquals(4, Application.subtractTwoNumbers(7,3));
+        Assertions.assertEquals(5, Application.subtractTwoNumbers(8,3));
     }
 }
