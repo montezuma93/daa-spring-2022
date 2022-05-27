@@ -2,23 +2,21 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /*
-* Eine neue Methode, welche Zwei Zahlen mit einander dividiert (geteilt)
-*  Eine neue Methode, welche zwei Zahlen mit einander differenziert (minus)
-*  Eine neue Methode, welche zwei Zahlen mit einander multipliziert (mal)
-* Den User nicht nur nach zwei zahlen fragen, sondern davor fragen was er rechnen will
+ * Eine neue Methode, welche Zwei Zahlen mit einander dividiert (geteilt)
+ *  Eine neue Methode, welche zwei Zahlen mit einander differenziert (minus)
+ *  Eine neue Methode, welche zwei Zahlen mit einander multipliziert (mal)
+ * Den User nicht nur nach zwei zahlen fragen, sondern davor fragen was er rechnen will
  */
 
 public class Application {
 
     /**
-     * @param args
+     * @param args arguments
      * @see "https://stackoverflow.com/questions/4644415/java-how-to-get-input-from-system-console"
      * @deprecated warum, seit wann
      */
-    public static void main(String args[]) throws IOException  //static method
+    public static void main(String[] args) throws IOException  //static method
     {
-
-        // Does not work
         /*
         Console console = System.console();
         System.out.println("Bitte geben sie die erste Zahl an ");
@@ -27,10 +25,7 @@ public class Application {
         System.out.println("Bitte geben sie die zweite Zahl an ");
         line = console.readLine();
         int number2 = Integer.parseInt(line);
-        */
 
-        //Works
-        /*
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(System.in));
         System.out.println("Bitte geben sie die erste Zahl an ");
@@ -51,29 +46,48 @@ public class Application {
         System.out.println("Bitte geben sie die zweite Zahl an ");
         double number2 = in.nextInt();
 
-        double result = calculateSum(number1, number2);
-        double quotient = calculateQuotient(number1, number2);
-        double subtract = subtractTwoNumbers(number1, number2);
+        double summe = calculateSum(number1, number2);
+        double quotient = calculateProduct(number1, number2);
+        double subtract = calculateDivision(number1, number2);
+        System.out.println("Geben Sie ein der folgenden Rechenzeichen (+ - * /) ");
+        String zeichen = in.next();
+        // while (!Objects.equals(zeichen, "+") || !Objects.equals(zeichen, "-") ||
+        //        !Objects.equals(zeichen, "*") || !Objects.equals(zeichen, "/") );
+
+        String result = switch (zeichen) {
+            case "+" -> String.valueOf(calculateSum(number1, number2));
+            case "-" -> String.valueOf(calculateDifference(number1, number2));
+            case "*" -> String.valueOf(calculateProduct(number1, number2));
+            case "/" -> String.valueOf(calculateDivision(number1, number2));
+            default -> "";
+        };
+        System.out.println("Result: " + number1 + " " + zeichen + " " + number2 + " = " + result);
 
         System.out.println("Quotient of " + number1 + " and " + number2 + " is equal to " + quotient);
-        System.out.println("Result of " + number1 + " and " + number2 + " is equal to" + result);
+        System.out.println("Sum of " + number1 + " and " + number2 + " is equal to" + summe);
         System.out.println("Subtraction of " + number1 + " and " + number2 + " is equal to " + subtract);
+
     }
 
-
-    public static double  calculateSum(double number1, double number2) {
+    public static double calculateSum(double number1, double number2) {
         return number1 + number2;
     }
-    public static double subtractTwoNumbers(double number1, double number2) {
-        return number1 - number2;
-    }
 
-    public static double calculateQuotient(double number1, double number2) {
-        if (number2 == 0){
-            throw new RuntimeException("Teilen durch 0 nicht möglich!") ;
+    public static double calculateDivision(double number1, double number2) {
+        if (number2 == 0) {
+            throw new RuntimeException("Kann nicht durch 0 teilen");
         }
         return number1 / number2;
     }
+
+    public static double calculateDifference(double number1, double number2) {
+        return number1 - number2;
+    }
+
+    public static double calculateProduct(double number1, double number2) {
+        return number1 * number2;
+    }
+
 }
 
 
