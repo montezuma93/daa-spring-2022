@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /*
@@ -49,20 +47,25 @@ public class Application {
          **/
         Scanner in = new Scanner(System.in);
         System.out.println("Bitte geben sie die erste Zahl an ");
-        int number1 = in.nextInt();
+        double number1 = in.nextInt();
         System.out.println("Bitte geben sie die zweite Zahl an ");
-        int number2 = in.nextInt();
+        double number2 = in.nextInt();
 
-        int result = calculateSum(number1, number2);
-        double Quotient = calculatequotient(number1, number2);
+        double result = calculateSum(number1, number2);
+        double quotient = calculateQuotient(number1, number2);
 
-        System.out.println("Quotient of " + number1 + " and " + number2 + " is equal to " + Quotient);
+        System.out.println("Quotient of " + number1 + " and " + number2 + " is equal to " + quotient);
     }
-    public static int  calculateSum(int number1, int number2) {
+    public static double  calculateSum(double number1, double number2) {
         return number1 + number2;
     }
 
-    public static double calculatequotient(int number1, int number2){return number1 / number2; }
+    public static double calculateQuotient(double number1, double number2) {
+        if (number2 == 0){
+            throw new RuntimeException("Teilen durch 0 nicht möglich!") ;
+        }
+        return number1 / number2;
+    }
 }
 
 
